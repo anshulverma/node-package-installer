@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+(function() {
+  var npi;
+
+  require('coffee-script/register');
+  require('../lib/modules/completion');
+
+  process.title = 'npi';
+
+  npi = require('../lib/main');
+
+  npi.cli.start(function(err) {
+    if (!err) {
+      npi.cli.log.info('NPI'.grey + ' done'.green.bold);
+    } else {
+      npi.cli.log.error('NPI'.grey + (' error: ' + err.message).red.bold);
+    }
+    return process.exit(err ? 1 : 0);
+  });
+
+}).call(this);
