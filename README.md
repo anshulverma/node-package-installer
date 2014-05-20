@@ -1,4 +1,4 @@
 node-package-installer
-======================
+===================
 
-Helper utility tool to install packages
+An easy way to install packages
