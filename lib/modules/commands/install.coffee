@@ -43,8 +43,7 @@ class Package
       response.on 'end', callback
       response.on 'error', (err) ->
         callback(err)
-    self = this
-    req.on 'error', (err) ->
+    req.on 'error', (err) =>
       console.dir(err)
       if err && err.code == 'ENOTFOUND'
         callback new Error "artifact not found at '#{self.pkg_url}'"
